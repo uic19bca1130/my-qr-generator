@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:borer-box;
+}
+body{
+ text-align: center;
+ background-color: #1b2034;
+ color: #fff;
+
+}
+img{
+  display: block;
+  width: 480px;
+  height: 480px;
+  margin: 2rem auto;
+}
+.app{
+  padding: 2rem;
+
+}
+h1{
+  front: size 2rem;
+  margin-bottom: 4rem;  
+}
+input{
+  background: #eeeeeef8;
+  width: 100%;
+  max-width: 420px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
