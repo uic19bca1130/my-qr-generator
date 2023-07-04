@@ -29,10 +29,10 @@ function QRCodeGenerator() {
 
   return (
     <div className="app">
-      <h1>QR Generator😎</h1>
+      <h1>QR Generator</h1>
       <input
         type="text"
-        placeholder="e.g. https://Ankush.com"
+        placeholder="e.g. https://url.com"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
       />
