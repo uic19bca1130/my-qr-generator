@@ -1,24 +1,18 @@
-import './App.css';
-import  QRCode from './Component/Qrcode.jsx' 
-import Navbar from './Component/Navbar';
-
-import CALL from './Component/CALL';
-import Url from './Component/Url';
-
-import TEXT from './Component/TEXT';
+import "./App.css";
+import QRCode from "./Component/Qrcode";
+import Navbar from "./Component/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <QRCode/>
-      
-      <CALL/>
-      <Url/>
-      <TEXT/>
-      
-           
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="qrcode/:text" element={<QRCode/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
