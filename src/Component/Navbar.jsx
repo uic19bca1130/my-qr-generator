@@ -21,7 +21,6 @@ const Navbar = () => {
           <Link
             className={`nav-link ${activeTab === "url" ? "active" : ""}`}
             id="url"
-            
             to="qrcode/Url"
           >
             {" "}
@@ -29,7 +28,6 @@ const Navbar = () => {
           </Link>
           <button
             className={`nav-link ${activeTab === "url" ? "active" : ""}`}
-            
             id="url"
             onClick={() => selectTab("url")}
             data-bs-toggle="pill"
@@ -78,7 +76,6 @@ const Navbar = () => {
             id="call"
             to="qrcode/Call"
           >
-            
             {" "}
             CALL
           </Link>
