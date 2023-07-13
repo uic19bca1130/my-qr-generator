@@ -1,12 +1,11 @@
-// import { Link } from "@mui/material";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 
 const Navbar = () => {
-  const [activeTab, ] = useState("location");
+  const [activeTab, ] = useState("");
 
   return (
-    <div className="tabs colour-black">
+    <div>
       <ul
         className="nav nav-pills -primary"
         id="qr-type-pills-tab"
@@ -16,55 +15,52 @@ const Navbar = () => {
           <Link
             className={`nav-link ${activeTab === "url" ? "active" : ""}`}
             id="url"
-            to="qrcode/Url"
+            to="qrcode/URL"
           >
-            {" "}
-          URL
+            <div className="box3d">URL</div>
           </Link>
-       
         </li>
         <li className="nav-item" role="presentation">
-        <Link
-            className= {`nav-link ${activeTab === "location" ? "active" : ""}`}
+          <Link
+            className={`nav-link ${
+              activeTab === "location" ? "active" : ""
+            }`}
             id="url"
-            to="qrcode/Location"
+            to="qrcode/Google Maps URL"
           >
-            {" "}
-          LOCATION
+            <div className="box3d">LOCATION</div>
           </Link>
- 
         </li>
         <li className="nav-item" role="presentation">
-        <Link
+          <Link
             className={`nav-link ${activeTab === "call" ? "active" : ""}`}
             id="call"
-            to="qrcode/Call"
+            to="qrcode/CALL"
           >
-            {" "}
-            CALL
+            <div className="box3d">CALL</div>
           </Link>
         </li>
         <li className="nav-item" role="presentation">
-        <Link
+          <Link
             className={`nav-link ${activeTab === "text" ? "active" : ""}`}
             id="text"
-            to="qrcode/text"
+            to="qrcode/TEXT"
           >
-            {" "}
-            TEXT
+            <div className="box3d">TEXT</div>
           </Link>
-      
         </li>
         <li className="nav-item" role="presentation">
-          <div className="dropdown">
-            <ul
-              className="dropdown-menu"
-              aria-labelledby="dropdownMenuButton1"
-            ></ul>
-          </div>
+          <Link
+            className={`nav-link ${activeTab === "SMS" ? "active" : ""}`}
+            id="SMS"
+            to="qrcode/SMS"
+          >
+            <div className="box3d">SMS</div>
+          </Link>
         </li>
       </ul>
     </div>
   );
 };
+
 export default Navbar;

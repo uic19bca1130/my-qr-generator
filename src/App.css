@@ -133,3 +133,19 @@ button:active{
   align-items: center;
   gap: 40px;
 }
+.box3d {
+  display: inline-block;
+  padding: 10px;
+  background-color: #02f7708e; 
+  border: 1px solid #00fc8663;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transform: perspective(100px) rotateX(10deg) rotateY(-10deg);
+  transition: transform 0.3s ease-in-out;
+  color: #ffffff75;
+}
+
+.box3d:hover {
+  transform: perspective(100px) rotateX(0) rotateY(0);
+  background-color: #ff000000;
+}

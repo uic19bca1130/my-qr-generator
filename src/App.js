@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="qrcode/:text" element={<QRCode/>}/>
+          <Route path="qrcode/:text" element={<QRCode/>}/>    
         </Routes>
       </BrowserRouter>
     </div>
