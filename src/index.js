@@ -16,7 +16,9 @@ root.render(
   <React.StrictMode>
   <ThemeProvider theme={darkTheme}>
     <CssBaseline/>
+    
     <App />
+
   </ThemeProvider>
   </React.StrictMode>
 );

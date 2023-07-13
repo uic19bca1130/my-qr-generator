@@ -23,7 +23,6 @@ const Navbar = () => {
           </Link>
        
         </li>
-
         <li className="nav-item" role="presentation">
         <Link
             className= {`nav-link ${activeTab === "location" ? "active" : ""}`}
@@ -44,7 +43,6 @@ const Navbar = () => {
             {" "}
             CALL
           </Link>
-
         </li>
         <li className="nav-item" role="presentation">
         <Link
