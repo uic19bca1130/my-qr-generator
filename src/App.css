@@ -149,3 +149,12 @@ button:active{
   transform: perspective(100px) rotateX(0) rotateY(0);
   background-color: #ff000000;
 }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

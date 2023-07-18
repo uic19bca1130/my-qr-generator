@@ -5,12 +5,13 @@ import  Button from "@mui/material/Button";
 
 function QRCodeGenerator() {
   const [url, setUrl] = useState("");
+  
 
   const [qr, setQr] = useState("");
   const { text } = useParams();
   const generateQRCode = () => {
     const phoneNumber = url.trim(); //trim removeing whitespace from the end of
-     const textMessage = "";
+     //const textMessage = "";
 
     
     const text = Number(phoneNumber);
@@ -22,7 +23,8 @@ if(text)
 else{
   qrText = `${phoneNumber}`;
 }
-    qrText = `smsto:9816167960:${qrText}:${textMessage}`;
+    //qrText = `smsto:9816167960:${qrText}:${textMessage}`;
+   
    
 
     toDataURL(
@@ -61,6 +63,7 @@ else{
           boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
           transform: "translateY(0)",
           transition: "transform 0.3s ease-out",
+          animation: "fade-in 1s ease-in-out",//Add fade-in animation
         }}      
       >  
         Generate
@@ -69,16 +72,17 @@ else{
         <>
           <img src={qr} alt="QR Code" />
           <Button
-            variant="contained" 
+            variant="contained"
             color="success"
             href={qr}
             download="qrcode.png"
             sx={{
               marginTop: "16px",
-              background: "linear-gradient(to bottom, #00ff00,#009900)",//added 3d colour in the button
+              background: "linear-gradient(to bottom, #00ff00, #009900)",
               boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
               transform: "translateY(0)",
               transition: "transform 0.3s ease-out",
+              animation: "fade-in 1s ease-in-out", 
             }}
           >
             Download

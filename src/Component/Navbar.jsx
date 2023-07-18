@@ -13,7 +13,7 @@ const Navbar = () => {
       >
         <li className="nav-item" role="presentation">
           <Link
-            className={`nav-link ${activeTab === "url" ? "active" : ""}`}
+            className={`nav-link ${activeTab === "url" ? "active" : ""}`}//active lab use to indicate tabs is currently active or selected
             id="url"
             to="qrcode/URL"
           >
@@ -23,7 +23,7 @@ const Navbar = () => {
         <li className="nav-item" role="presentation">
           <Link
             className={`nav-link ${
-              activeTab === "location" ? "active" : ""
+              activeTab === "location" ? "active" : ""//active class is modifier class that applies diferent style or link
             }`}
             id="url"
             to="qrcode/Google Maps URL"
@@ -49,15 +49,7 @@ const Navbar = () => {
             <div className="box3d">TEXT</div>
           </Link>
         </li>
-        <li className="nav-item" role="presentation">
-          <Link
-            className={`nav-link ${activeTab === "SMS" ? "active" : ""}`}
-            id="SMS"
-            to="qrcode/SMS"
-          >
-            <div className="box3d">SMS</div>
-          </Link>
-        </li>
+      
       </ul>
     </div>
   );
