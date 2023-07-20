@@ -1,40 +1,31 @@
 import { toDataURL } from "qrcode";
 import { useState } from "react";
 import { useParams } from "react-router-dom"; // Import useParams from react-router-dom
-import  Button from "@mui/material/Button";
+import Button from "@mui/material/Button";
 
 function QRCodeGenerator() {
   const [url, setUrl] = useState("");
-  
-
   const [qr, setQr] = useState("");
   const { text } = useParams();
-  const generateQRCode = () => {
-    const phoneNumber = url.trim(); //trim removeing whitespace from the end of
-     //const textMessage = "";
 
-    
+  const generateQRCode = () => {
+    const phoneNumber = url.trim();
     const text = Number(phoneNumber);
     let qrText;
-if(text) 
-{
-  qrText = `tel:${phoneNumber}`;//Add 'tel:' prefix to the phone number
-}
-else{
-  qrText = `${phoneNumber}`;
-}
-    //qrText = `smsto:9816167960:${qrText}:${textMessage}`;
-   
-   
+    if (text) {
+      qrText = `tel:${phoneNumber}`;
+    } else {
+      qrText = `${phoneNumber}`;
+    }
 
     toDataURL(
-      qrText,//Use the modified qrText instead of url
+      qrText,
       {
         width: 400,
         margin: 2,
         color: {},
       },
-      (err, dataURL) => {//there is an error while generating the QR code, the function logs the error to the console using console.error()
+      (err, dataURL) => {
         if (err) return console.error(err);
         console.log(dataURL);
         setQr(dataURL);
@@ -42,35 +33,36 @@ else{
     );
   };
 
-
-  return (  
+  return (
     <div className="app">
- 
       <h1>QR Generator</h1>
       <input
-        type="text"    
-        placeholder={`e.g.https://${text}.com`}
+        type="text"
+        placeholder={`e.g: ${text}`}
         value={url}
-        onChange={(e) => setUrl(e.target.value)}//onchange when the input value changes--( retrieves the current value of the input field,)
+        onChange={(e) => setUrl(e.target.value)}
       />
+
       <Button
-      
         variant="contained"
         onClick={generateQRCode}
         sx={{
-          marginLeft: "15px",
-          background: "linear-gradient(to bottom,#00ff00, #009900)",
+          marginRight: "30px",
+          background: "linear-gradient(to bottom, #00ff00, #009900)",
           boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
           transform: "translateY(0)",
           transition: "transform 0.3s ease-out",
-          animation: "fade-in 1s ease-in-out",//Add fade-in animation
-        }}      
-      >  
+          animation: "fade-in 1s ease-in-out",
+        }}
+      >
         Generate
       </Button>
-      {qr && (
-        <>
+
+      {qr ? (
+        <div style={{ textAlign: "center" }}>
+            <h2>Welcome to my QR Code Generator</h2>
           <img src={qr} alt="QR Code" />
+
           <Button
             variant="contained"
             color="success"
@@ -82,16 +74,21 @@ else{
               boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
               transform: "translateY(0)",
               transition: "transform 0.3s ease-out",
-              animation: "fade-in 1s ease-in-out", 
+              animation: "fade-in 1s ease-in-out",
             }}
           >
             Download
           </Button>
           <a href={`tel:${url}`} style={{ textDecoration: "none" }}>
+
           </a>
-        </>
+        </div>
+      ) : (                                        //using the textAlign CSS property
+        <div style={{ textAlign: "center" }}>
+          <h2 style={{ fontSize: "50px", fontWeight: "bold" }}>Welcome to my QR code Generator</h2>
+        </div>
       )}
-      </div> 
+    </div>
   );
 }
 

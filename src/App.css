@@ -127,28 +127,8 @@ button:active{
   justify-content: space-around;
   gap: 10px;
 }
-.output-box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-.box3d {
-  display: inline-block;
-  padding: 10px;
-  background-color: #02f7708e; 
-  border: 1px solid #00fc8663;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  transform: perspective(100px) rotateX(10deg) rotateY(-10deg);
-  transition: transform 0.3s ease-in-out;
-  color: #ffffff75;
-}
 
-.box3d:hover {
-  transform: perspective(100px) rotateX(0) rotateY(0);
-  background-color: #ff000000;
-}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -157,4 +137,33 @@ button:active{
     opacity: 1;
   }
 }
+.nav-pills {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-link.active {
+  background-color: #39ff14;
+  color: #fff;
+}
+
 
